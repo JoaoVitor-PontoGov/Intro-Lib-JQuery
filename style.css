@@ -24,3 +24,9 @@ button:hover {
   transition: .2s;
   transform: scale(1.1);
 }
+
+.selecionado {
+  transition: .2s;
+  color: rgb(255, 146, 146);
+
+}
