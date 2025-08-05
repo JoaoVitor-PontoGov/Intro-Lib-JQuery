@@ -28,5 +28,4 @@ button:hover {
 .selecionado {
   transition: .2s;
   color: rgb(255, 146, 146);
-
 }

@@ -4,6 +4,8 @@ $(function () {
 		if ($("#novoContato").val() !== "") {
 			id++;
 			$("#lista").append("<li id='" + id + "'>" + $("#novoContato").val() + "  <button onclick=\"excluir(" + id + ")\">X</button> </li>")
+		} else {
+			alert("Contato vazio")
 		}
 	})
 
