@@ -17,6 +17,18 @@ $(function () {
 		$("#lista").slideToggle("fast");
 	})
 
+	$("#pesquisar").click(function () {
+		if ($("#buscaContato").val() !== "") {
+			$("#lista li").hide();
+
+			$("#lista li").filter(function () {
+				return $(this).text().toLowerCase().indexOf($("#buscaContato").val().toLowerCase()) > -1;
+			}).show();
+		} else {
+			$("#lista li").show();
+		}
+	})
+
 })
 
 function excluir(id) {
