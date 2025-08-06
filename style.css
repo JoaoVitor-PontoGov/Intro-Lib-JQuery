@@ -33,4 +33,40 @@ button:hover {
 #lista {
   display: none;
   list-style: none;
+  border: 1px solid black;
+  border-radius: 7px;
+  min-width: 250px;
+  background-color: rgb(47, 47, 47);
+  padding: 10px;
+  max-height: 275px;
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+
+#lista::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+#lista::-webkit-scrollbar-thumb {
+  background-color: rgb(240, 255, 253);
+  border-radius: 6px;
+}
+
+#lista::-webkit-scrollbar-track {
+  background: rgb(77, 77, 77);
+  border-radius: 6px;
+}
+
+hr {
+  border: 1px solid black;
+  width: 50%;
+}
+
+input {
+  background-color: rgb(240, 255, 253);
+  text-decoration: none;
+  border-radius: 5px;
+  width: 15%;
+  padding: 6px;
 }

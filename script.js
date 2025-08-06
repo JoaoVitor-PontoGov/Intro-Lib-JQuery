@@ -17,8 +17,13 @@ $(function () {
 	})
 
 	$("#vizuLista").click(function () {
-		$("#lista").slideToggle("fast");
-	})
+		$("#lista").slideToggle("fast", function () {
+			const aberto = $(this).is(":visible");
+			$("#vizuLista").text(aberto ? "Fechar lista <" : "Vizualizar lista >");
+		});
+	});
+
+
 
 	$("#pesquisar").click(function () {
 		if ($("#buscaContato").val() !== "") {
