@@ -6,9 +6,12 @@ $(function () {
 			var li = $("<li style='display:none'  id='" + id + "'>&rarr; " + $("#novoContato").val() + "  <button onclick=\"excluir(" + id + ")\">X</button></li>");
 			$("#lista").append(li);
 			li.fadeIn("fast");
+			atualizar();
+
 		} else {
 			alert("Contato vazio");
 		}
+
 
 	})
 
@@ -22,8 +25,6 @@ $(function () {
 			$("#vizuLista").text(aberto ? "Fechar lista <" : "Vizualizar lista >");
 		});
 	});
-
-
 
 	$("#pesquisar").click(function () {
 		if ($("#buscaContato").val() !== "") {
@@ -43,4 +44,15 @@ function excluir(id) {
 	$("li#" + id).fadeOut("fast", function () {
 		$(this).remove();
 	});
+}
+
+function atualizar() {
+	var itens = $("#lista li");
+
+	itens.sort(function (a, b) {
+		return $(a).text().localeCompare($(b).text())
+	});
+
+	$("#lista li").remove();
+	$("#lista").append(itens);
 }
