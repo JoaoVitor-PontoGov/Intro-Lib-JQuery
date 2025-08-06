@@ -3,10 +3,13 @@ $(function () {
 	$("#botao").click(function () {
 		if ($("#novoContato").val() !== "") {
 			id++;
-			$("#lista").append("<li id='" + id + "'>&rarr; " + $("#novoContato").val() + "  <button onclick=\"excluir(" + id + ")\">X</button> </li>")
+			var li = $("<li style='display:none'  id='" + id + "'>&rarr; " + $("#novoContato").val() + "  <button onclick=\"excluir(" + id + ")\">X</button></li>");
+			$("#lista").append(li);
+			li.fadeIn("fast");
 		} else {
-			alert("Contato vazio")
+			alert("Contato vazio");
 		}
+
 	})
 
 	$("#lista").on("click", "li", function () {
@@ -32,5 +35,7 @@ $(function () {
 })
 
 function excluir(id) {
-	$("li#" + id).remove();
+	$("li#" + id).fadeOut("fast", function () {
+		$(this).remove();
+	});
 }
